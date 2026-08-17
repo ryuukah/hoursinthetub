@@ -5,11 +5,8 @@
 body {
   margin: 0;
   padding: 0;
-
-  background: white;
-
+  background: #191919;
   font-family: Arial, sans-serif;
-
   color: #777;
 }
 
@@ -27,36 +24,39 @@ body {
   display: flex;
   align-items: center;
 
-  background: white;
+  background: #191919;
 
-  border-bottom: 1px solid #dedede;
+  border-bottom: 1px solid #3a3a3a;
 
   overflow: hidden;
 }
 
 
-/* THE MOVING PINK BACKGROUND */
+/* MOVING PINK BACKGROUND */
 
 .pink-slider {
   position: absolute;
 
   top: 0;
-  left: 0;
 
-  width: 33.333%;
+  /* slightly wider than the tab */
+  left: -10px;
+
+  width: calc(33.333% + 20px);
   height: 38px;
 
   background: linear-gradient(
     to right,
     #f5c2d9,
     #f8dce8,
-    #ffffff
+    #f5c2d9
   );
 
   pointer-events: none;
 
   transition:
-    left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 
   z-index: 0;
 }
@@ -75,7 +75,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  color: #999;
+  color: #aaa;
 
   text-decoration: none;
 
@@ -93,14 +93,14 @@ body {
 /* ACTIVE TAB */
 
 .nav-link.active {
-  color: #9b7890;
+  color: #8d657a;
 }
 
 
 /* HOVER TEXT */
 
 .nav-link:hover {
-  color: #d86b9a;
+  color: #8d657a;
 }
 
 
@@ -115,7 +115,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  color: #4f4147;
+  color: #d7d7d7;
 
   font-size: 20px;
   font-weight: bold;
@@ -134,6 +134,8 @@ body {
   width: 100%;
 
   padding: 10px 0 0;
+
+  background: #191919;
 }
 
 
@@ -144,9 +146,9 @@ body {
   display: flex;
   align-items: center;
 
-  border: 1px solid #dedede;
+  border: 1px solid #3a3a3a;
 
-  background: white;
+  background: #191919;
 }
 
 
@@ -177,7 +179,9 @@ body {
   border: none;
   outline: none;
 
-  color: #555;
+  background: #191919;
+
+  color: #eeeeee;
 
   font-family: Arial, sans-serif;
 
@@ -186,7 +190,7 @@ body {
 
 
 #searchInput::placeholder {
-  color: #c8bfc3;
+  color: #888;
 }
 
 
@@ -228,21 +232,17 @@ body {
 
   .nav-link {
     font-size: 10px;
-
     letter-spacing: 1px;
   }
 
   .separator {
     width: 10px;
-
     font-size: 16px;
   }
 
   #searchButton {
     min-width: 80px;
-
     padding: 0 10px;
-
     font-size: 10px;
   }
 }
