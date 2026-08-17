@@ -1,0 +1,248 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background: white;
+
+  font-family: Arial, sans-serif;
+
+  color: #777;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.top-nav {
+  position: relative;
+
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+
+  background: white;
+
+  border-bottom: 1px solid #dedede;
+
+  overflow: hidden;
+}
+
+
+/* THE MOVING PINK BACKGROUND */
+
+.pink-slider {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 33.333%;
+  height: 38px;
+
+  background: linear-gradient(
+    to right,
+    #f5c2d9,
+    #f8dce8,
+    #ffffff
+  );
+
+  pointer-events: none;
+
+  transition:
+    left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+  z-index: 0;
+}
+
+
+/* NAVIGATION LINKS */
+
+.nav-link {
+  position: relative;
+
+  flex: 1;
+
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #999;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  letter-spacing: 2px;
+
+  z-index: 2;
+
+  transition: color 0.2s ease;
+}
+
+
+/* ACTIVE TAB */
+
+.nav-link.active {
+  color: #9b7890;
+}
+
+
+/* HOVER TEXT */
+
+.nav-link:hover {
+  color: #d86b9a;
+}
+
+
+/* SEPARATORS */
+
+.separator {
+  position: relative;
+
+  width: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #4f4147;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  line-height: 1;
+
+  z-index: 3;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-container {
+  width: 100%;
+
+  padding: 10px 0 0;
+}
+
+
+.search-box {
+  width: 100%;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #dedede;
+
+  background: white;
+}
+
+
+/* SEARCH ICON */
+
+.search-icon {
+  width: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #e4a6bd;
+
+  font-size: 21px;
+}
+
+
+/* INPUT */
+
+#searchInput {
+  flex: 1;
+
+  height: 100%;
+
+  padding: 0 10px;
+
+  border: none;
+  outline: none;
+
+  color: #555;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 13px;
+}
+
+
+#searchInput::placeholder {
+  color: #c8bfc3;
+}
+
+
+/* SEARCH BUTTON */
+
+#searchButton {
+  height: 100%;
+
+  min-width: 100px;
+
+  padding: 0 20px;
+
+  border: none;
+
+  background: #df7199;
+
+  color: white;
+
+  font-size: 12px;
+
+  font-family: Arial, sans-serif;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+
+#searchButton:hover {
+  background: #d45f8b;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .nav-link {
+    font-size: 10px;
+
+    letter-spacing: 1px;
+  }
+
+  .separator {
+    width: 10px;
+
+    font-size: 16px;
+  }
+
+  #searchButton {
+    min-width: 80px;
+
+    padding: 0 10px;
+
+    font-size: 10px;
+  }
+}
